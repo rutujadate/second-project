@@ -8,10 +8,10 @@ function App() {
 
   arr.map((SingleElement)=>{
     if(SingleElement%2===0){
-    return <div><i>{SingleElement}</i></div>
+    return <div><i>{SingleElement*2}</i></div>
     }
     else{
-      return <div><strong>{SingleElement}</strong></div>
+      return <div><strong>{SingleElement*2}</strong></div>
     }
   
   })
