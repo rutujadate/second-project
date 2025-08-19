@@ -2,23 +2,40 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  let num1 = 10, num2 = 10;
+  let sum = 0;
+  function Addition() {
+      sum = num1 + num2;
+      console.log(sum);
+  }
+  
+     function Subtraction() {
+      sum = num1 - num2;
+      console.log(sum);
+  }
+  function Multiplication() {
+      sum = num1 * num2;
+      console.log(sum);
+  }
+  function Division() {
+      sum = num1 / num2;
+      console.log(sum);
+  }
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<div>
+  <div>{num1}</div>
+  <div>{num2}</div>
+  <button onClick={Addition}>Addition</button>
+<div><button onClick={Subtraction}>Subtraction</button>
+<div><button onClick={Multiplication}>Multiplication</button>
+<div><button onClick={Division}>Division</button></div>
+</div>
+</div>
+
+</div>
+
   );
 }
 
