@@ -7,7 +7,13 @@ function App() {
   return (
 
   arr.map((SingleElement)=>{
-  return <div>{SingleElement*2}</div>
+    if(SingleElement%2===0){
+    return <div><i>{SingleElement}</i></div>
+    }
+    else{
+      return <div><strong>{SingleElement}</strong></div>
+    }
+  
   })
 
 
