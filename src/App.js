@@ -1,20 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  let num = [2, 3, 4, 5,6,7,8,9,10]
+  const [age, setAge] = useState();
+  function handleAgeChange(event) {
+    setAge(event.target.value)
+  }
   return (
-    <div>
-      {num.map((singleElement) => {
-        return <div>{arr.map((arrayElement) => {
-          return singleElement * arrayElement + "  "
+    <div>Enter Age:
+      <input
+        name='age' value={age}
+        onChange={handleAgeChange}
 
-        })}
-        </div>
-      })}
+      />
+      <div>{age}</div>
+
     </div>
+
+
   );
 }
-
 export default App;
