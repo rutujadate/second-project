@@ -17,11 +17,10 @@ function App() {
         name='text' value={name}
         onChange={handleNameChange} />
       <div><button onClick={onSubmit}>Submit</button></div>
-      {showBlock && <div>
+      {showBlock ?<div>
         <div>{name}</div>
         <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg" width="100" />
-      </div>}
-
+      </div>:<h1>Please Click on Submit Button</h1>}
     </div>
 
 
