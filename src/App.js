@@ -3,24 +3,50 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [name, setName] = useState();
-  const [showBlock, setShowBlock] = useState(false);
-  function onSubmit() {
-    setShowBlock(true)
+  const [num1, setNum1] = useState();
+  const [num2, setNum2] = useState();
+  const [addition, setAddition] = useState();
+  const [subtraction, setSubtraction] = useState();
+  const [multiplication, setMultiplication] = useState();
+  const [division, setDivision] = useState();
+  function handleNum1Change(event) {
+    setNum1 (parseInt(event.target.value))
+
   }
-  function handleNameChange(event) {
-    setName(event.target.value)
+  function handleNum2Change(event) {
+    setNum2 (parseInt(event.target.value))
+  }
+  function onSubmit(event) {
+    setAddition(num1 + num2)
+    setSubtraction(num1 - num2)
+    setMultiplication(num1 * num2)
+    setDivision(num1 / num2)
   }
   return (
     <div>
-      <input
-        name='text' value={name}
-        onChange={handleNameChange} />
+      <div>
+        <input
+          type='number'
+          name='number'
+          value={num1}
+          onChange={handleNum1Change}
+        /></div>
+      <div>
+        <input
+          type='number'
+          name='number'
+          value={num2}
+          onChange={handleNum2Change}
+        /></div>
       <div><button onClick={onSubmit}>Submit</button></div>
-      {showBlock ?<div>
-        <div>{name}</div>
-        <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg" width="100" />
-      </div>:<h1>Please Click on Submit Button</h1>}
+      <div><h1>Addition of {num1} and {num2} is : {addition}</h1>
+      </div>
+      <div><h1>Subtraction of {num1}and {num2} is : {subtraction}</h1>
+      </div>
+      <div><h1>Multiplication of {num1} and {num2} is :{multiplication}</h1>
+      </div>
+      <div><h1>Division of {num1} and {num2} is : {division}</h1>
+      </div>
     </div>
 
 
